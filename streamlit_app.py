@@ -46,7 +46,8 @@ try:
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     my_data_rows = get_fruit_load_list()
     streamlit.dataframe(my_data_rows)
-
+except URLError as e:
+  streamlit.error()
 #my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 #my_cur = my_cnx.cursor()
 #my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
