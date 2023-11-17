@@ -43,7 +43,7 @@ try:
         return my_cur.fetchall()
   def insert_row(new_fruit):
     with my_cnx.cursor() as my_cur:
-      my_cur.execute("insert into fruit_load_list values ('" + newfruit +"')")
+      my_cur.execute("insert into fruit_load_list values ('" + new_fruit +"')")
       return "Thanks for adding " + new_fruit
     
   if streamlit.button('Get Fruit load list'):
